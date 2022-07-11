@@ -16,6 +16,10 @@ const animation = keyframes`
     }
 `;
 
+const Emoji = styled.span`
+    font-size: 36px;
+`;
+
 const Box = styled.div`
     height: 200px;
     width: 200px;
@@ -24,8 +28,7 @@ const Box = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    span {
-        font-size: 36px;
+    ${Emoji} {
         &:hover {
             font-size: 50px;
         }
@@ -36,8 +39,9 @@ function App() {
     return (
         <Wrapper>
             <Box>
-                <span>happy</span>
+                <Emoji>🤤</Emoji>
             </Box>
+            <Emoji>🤤</Emoji>
         </Wrapper>
     );
 }
