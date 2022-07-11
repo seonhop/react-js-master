@@ -4,16 +4,18 @@ const Father = styled.div`
     display: flex;
 `;
 
-const Btn = styled.button`
-    background-color: teal;
-    color: white;
+const Input = styled.input.attrs({ required: true })`
+    background-color: tomato;
 `;
 
 function App() {
     return (
         <Father>
-            <Btn>Log In</Btn>
-            <Btn as="a">Hello</Btn>
+            <Input />
+            <Input />
+            <Input />
+            <Input />
+            <Input />
         </Father>
     );
 }
