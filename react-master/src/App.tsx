@@ -10,8 +10,8 @@ const Square = styled.div`
 function App() {
     return (
         <div>
-            <Circle bgColor="teal" />
-            <Circle bgColor="tomato" />
+            <Circle borderColor="black" bgColor="teal" />
+            <Circle text="hi" bgColor="tomato" />
         </div>
     );
 }
