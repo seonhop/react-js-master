@@ -1,17 +1,37 @@
-import Circle from "./Circle";
 import styled from "styled-components";
+import React, { useState } from "react";
 
-const Square = styled.div`
-    width: 200px;
-    height: 200px;
-    background-color: tomato;
+const Container = styled.div`
+    background-color: ${(props) => props.theme.bgColor};
+`;
+
+const H1 = styled.h1`
+    color: ${(props) => props.theme.textColor};
 `;
 
 function App() {
+    const [value, setValue] = useState("");
+    const onChange = (event: React.FormEvent<HTMLInputElement>) => {
+        const {
+            currentTarget: { value },
+        } = event;
+        setValue(value);
+    };
+    const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        console.log("hello", value);
+    };
     return (
         <div>
-            <Circle borderColor="black" bgColor="teal" />
-            <Circle text="hi" bgColor="tomato" />
+            <form onSubmit={onSubmit}>
+                <input
+                    value={value}
+                    onChange={onChange}
+                    type="text"
+                    placeholder="username"
+                />
+                <button>Log in</button>
+            </form>
         </div>
     );
 }
